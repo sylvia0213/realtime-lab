@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.ssr/
+.env*
+!.env.example
+*.tgz
+.DS_Store
+.openai/*.local.*
