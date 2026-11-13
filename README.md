@@ -23,7 +23,7 @@ npm run preview
 - Compare per-message notifications with 100ms batching.
 - Pause the stream, unsubscribe from individual topics, or trigger a disconnection.
 - Observe re-subscription, retry counts, sequence gaps, and a 240-entry bounded history.
-- Read the two articles and inspect their corresponding implementation.
+- Read the realtime engineering notes and the TradingView integration guide. The TradingView article includes an illustrative component; no TradingView library or live market feed is bundled into the app.
 
 All values are synthetic. The default transport runs in the browser and does **not** open a network WebSocket. Counters measure accepted messages and store notifications, **not** React commits, FPS, or CPU savings. Input rates depend on browser timer scheduling.
 
@@ -59,7 +59,7 @@ Server frame:
 - `src/Lab.tsx`: React subscription and accessible controls.
 - `src/content/*.md`: editable articles (JSON metadata inside frontmatter).
 - `scripts/content.mjs`: validates metadata and builds article data.
-- `scripts/prerender.mjs`: generates complete static HTML for six routes and a 404 page.
+- `scripts/prerender.mjs`: generates complete static HTML for the site and all articles, plus a 404 page.
 - `tests/stream.test.ts`: failure, reconnect, cancellation, ordering and batching tests.
 
 ## Writing an article
@@ -73,7 +73,7 @@ Add a Markdown file under `src/content/`, with this header:
 正文……
 ```
 
-Run the dev command again, or build. Routes and static pages are generated from the content. If adding a new category, update the filter options in `src/App.tsx`.
+Run the dev command again, or build. Routes and static pages are generated from the content. Category filters are generated automatically from article metadata.
 
 ## Deployment
 
